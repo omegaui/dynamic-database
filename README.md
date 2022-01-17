@@ -4,7 +4,7 @@ A fully code integrated minimal database management system for Java, Scala, Kotl
 
 It is written in Java and can be used in any other programming language that can run on the JVM.
 
-Since, the database in **fully code integrated**,
+Since, the database is **fully code integrated**,
 this means **NO** other program or piece of software is needed to use it.
 There is no need for any installation procedure 😉.
 Its just some java class reading and writing data to a file in a formatted manner.
