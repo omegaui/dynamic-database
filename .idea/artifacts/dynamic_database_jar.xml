@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dynamic-database:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dynamic_database_jar</output-path>
+    <root id="archive" name="dynamic-database.jar">
+      <element id="module-output" name="dynamic-database" />
+    </root>
+  </artifact>
+</component>

@@ -52,16 +52,22 @@ public class DataBase {
         Loads the database if the file exists else gives exception
      */
     public void triggerLoad(){
-        if(file != null && file.exists())
-            load();
-        else{
-            try{
-                throw new Exception(file + " doesn't exists!");
+        if(file != null && !file.exists()){
+            System.err.println(file.getName() + " does n't exists.");
+            System.out.println("Attempting to create a new file.");
+            try {
+                boolean result = file.createNewFile();
+                if(result)
+                    System.out.println("Successfully Created the new file");
+                else
+                    System.err.println("Unable to Create a new file");
             }
-            catch(Exception e){
+            catch (Exception e){
+                System.err.println("An exception occurred when creating an non-existing data base file!");
                 e.printStackTrace();
             }
         }
+        load();
     }
 
     /*
@@ -125,9 +131,7 @@ public class DataBase {
         try(PrintWriter writer = new PrintWriter(file)){
             getDataSetNames().forEach(dataSetName->{
                 writer.println(DataBase.SET_PREFIX + dataSetName);
-                getEntries(dataSetName).forEach((entry)->{
-                    writer.println(entry.toDataForm());
-                });
+                getEntries(dataSetName).forEach((entry)-> writer.println(entry.toDataForm()));
             });
         }
         catch(Exception e){
