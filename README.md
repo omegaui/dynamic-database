@@ -9,7 +9,7 @@ this means **NO** other program or piece of software is needed to use it.
 There is no need for any installation procedure 😉.
 Its just some java class reading and writing data to a file in a formatted manner.
 
-So, All you need is either the source code or the tiny [precompiled-jar](https://raw.githubusercontent.com/omegaui/dynamic-database/main/bin/dynamic-database.jar)
+So, All you need is either the source code or the tiny [precompiled-jar](https://raw.githubusercontent.com/omegaui/dynamic-database/master/bin/dynamic-database.jar)
 
 ## How it works
 
