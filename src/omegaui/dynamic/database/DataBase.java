@@ -1,4 +1,4 @@
-/**
+/*
  * DataBase
  * Copyright (C) 2021 - 2022 Omega UI
 
@@ -33,23 +33,23 @@ public class DataBase {
     private final LinkedList<DataEntry> entries = new LinkedList<>(); // List containing the values
     private final LinkedList<String> dataSetNames = new LinkedList<>(); // List containing the available data sets
 
-    /*
-        Constructor to create file object from its path and pass it to the main constructor
+    /**
+     * Constructor to create file object from its path and pass it to the main constructor
      */
     public DataBase(String filePath){
         this(new File(filePath));
     }
 
-    /*
-        Constructor to initialize the file object and start reading the database
+    /**
+     * Constructor to initialize the file object and start reading the database
      */
     public DataBase(File file){
         this.file = file;
         triggerLoad();
     }
 
-    /*
-        Loads the database if the file exists else gives exception
+    /**
+     * Loads the database if the file exists else gives exception
      */
     public void triggerLoad(){
         if(file != null && !file.exists()){
@@ -70,8 +70,8 @@ public class DataBase {
         load();
     }
 
-    /*
-        The Actual Loading of the DataBase takes place here
+    /**
+     * The Actual Loading of the DataBase takes place here
      */
     public void load(){
         try(Scanner reader = new Scanner(file)){
@@ -124,8 +124,8 @@ public class DataBase {
         }
     }
 
-    /*
-        Performs the write operation to the file
+    /**
+     * Performs the write operation to the file
      */
     public void save(){
         try(PrintWriter writer = new PrintWriter(file)){
@@ -139,23 +139,23 @@ public class DataBase {
         }
     }
 
-    /*
-        Getter of File
+    /**
+     * Getter of File
      */
     public File getFile() {
         return file;
     }
 
-    /*
-        Resets the database by losing all the data
+    /**
+     * Resets the database by losing all the data
      */
     public void clear(){
         entries.clear();
         dataSetNames.clear();
     }
 
-    /*
-        Updates the specified data set 's value at the specified index if found else creates a new entry
+    /**
+     * Updates the specified data set 's value at the specified index if found else creates a new entry
      */
     public void updateEntry(String dataSetName, String value, int index){
         DataEntry entry = getEntryAt(dataSetName, index);
@@ -166,8 +166,8 @@ public class DataBase {
         }
     }
 
-    /*
-        Creates a new entry in a dataset
+    /**
+     * Creates a new entry in a dataset
      */
     public void addEntry(String dataSetName, String value){
         if(!dataSetNames.contains(dataSetName))
@@ -175,8 +175,8 @@ public class DataBase {
         entries.add(new DataEntry(dataSetName, value));
     }
 
-    /*
-        Checks for a value's existence in the database
+    /**
+     * Checks for a value's existence in the database
      */
     public boolean hasEntry(String dataSetName, String value){
         for(DataEntry entryX : entries){
@@ -186,8 +186,8 @@ public class DataBase {
         return false;
     }
 
-    /*
-        Checks for an entry's existence in the database
+    /**
+     * Checks for an entry's existence in the database
      */
     public boolean hasEntry(DataEntry entry){
         for(DataEntry entryX : entries){
@@ -197,15 +197,15 @@ public class DataBase {
         return false;
     }
 
-    /*
-        Getter of entries
+    /**
+     * Getter of entries
      */
     public LinkedList<DataEntry> getEntries() {
         return entries;
     }
 
-    /*
-        Returns the entries of a dataset in form of a String list
+    /**
+     * Returns the entries of a dataset in form of a String list
      */
     public LinkedList<String> getEntriesAsString(String dataSetName) {
         LinkedList<String> results = new LinkedList<>();
@@ -216,8 +216,8 @@ public class DataBase {
         return results;
     }
 
-    /*
-        Returns the entries of a dataset
+    /**
+     * Returns the entries of a dataset
      */
     public LinkedList<DataEntry> getEntries(String dataSetName) {
         LinkedList<DataEntry> results = new LinkedList<>();
@@ -228,8 +228,8 @@ public class DataBase {
         return results;
     }
 
-    /*
-        Returns the entry of a dataset at specified index
+    /**
+     * Returns the entry of a dataset at specified index
      */
     public DataEntry getEntryAt(String dataSetName, int index){
         LinkedList<DataEntry> dataSetNames = getEntries(dataSetName);
@@ -238,8 +238,8 @@ public class DataBase {
         return dataSetNames.get(index);
     }
 
-    /*
-        Returns the first entry of a dataset
+    /**
+     * Returns the first entry of a dataset
      */
     public DataEntry getEntryAt(String dataSetName){
         LinkedList<DataEntry> dataSetNames = getEntries(dataSetName);
@@ -248,8 +248,8 @@ public class DataBase {
         return dataSetNames.get(0);
     }
 
-    /*
-        Getter of datasets
+    /**
+     * Getter of datasets
      */
     public LinkedList<String> getDataSetNames(){
         return dataSetNames;

@@ -1,4 +1,4 @@
-/**
+/*
  * DataEntry
  * Copyright (C) 2021 Omega UI
 
@@ -28,16 +28,16 @@ public class DataEntry{
 
     public LinkedList<String> lines = new LinkedList<>(); // Holds the value in split form if the value is multi lined
 
-    /*
-        Constructor accepts the dataset's name to which it belongs and its value
+    /**
+     * Constructor accepts the dataset's name to which it belongs and its value
      */
     public DataEntry(String dataSetName, String value){
         this.dataSetName = dataSetName;
         setValue(value);
     }
 
-    /*
-        Parses value and stores it in lines list
+    /**
+     * Parses value and stores it in lines list
      */
     public void evaluateLines(){
         if(value == null)
@@ -56,79 +56,79 @@ public class DataEntry{
             lines.add(value);
     }
 
-    /*
-        Setter of value
+    /**
+     * Setter of value
      */
     protected void setValue(String value){
         this.value = value;
         evaluateLines();
     }
 
-    /*
-        Getter of dataSetName
+    /**
+     * Getter of dataSetName
      */
     public String getDataSetName(){
         return dataSetName;
     }
 
-    /*
-        Getter of value
+    /**
+     * Getter of value
      */
     public String getValue(){
         return value;
     }
 
-    /*
-        Getter of lines
+    /**
+     * Getter of lines
      */
     public LinkedList<String> getLines(){
         return lines;
     }
 
-    /*
-        Returns the value after parsing it to long
+    /**
+     * Returns the value after parsing it to long
      */
     public long getValueAsLong(){
         return Long.parseLong(value);
     }
 
-    /*
-        Returns the value after parsing it to int
+    /**
+     * Returns the value after parsing it to int
      */
     public int getValueAsInt(){
         return Integer.parseInt(value);
     }
 
-    /*
-        Returns the value after parsing it to double
+    /**
+     * Returns the value after parsing it to double
      */
     public double getValueAsDouble(){
         return Double.parseDouble(value);
     }
 
-    /*
-        Returns the value after parsing it to float
+    /**
+     * Returns the value after parsing it to float
      */
     public double getValueAsFloat(){
         return Float.parseFloat(value);
     }
 
-    /*
-        Returns the value after parsing it to char
+    /**
+     * Returns the value after parsing it to char
      */
     public char getValueAsChar(){
         return value.charAt(0);
     }
 
-    /*
-        Returns the value after parsing it to boolean
+    /**
+     * Returns the value after parsing it to boolean
      */
     public boolean getValueAsBoolean(){
         return Boolean.parseBoolean(value);
     }
 
-    /*
-        Checks for equality with an DataEntry object
+    /**
+     * Checks for equality with an DataEntry object
      */
     @Override
     public boolean equals(Object obj){
@@ -137,24 +137,24 @@ public class DataEntry{
         return super.equals(obj);
     }
 
-    /*
-        Checks for equality of dataSetName and value
+    /**
+     * Checks for equality of dataSetName and value
      */
     public boolean equals(String dataSetName, String value){
         return this.dataSetName.equals(dataSetName) && this.value.equals(value);
     }
 
-    /*
-        Returns String form of the DataEntry
+    /**
+     * Returns String form of the DataEntry
      */
     @Override
     public String toString(){
         return dataSetName + " -> " + value;
     }
 
-    /*
-        Returns the writable form of the value.
-        Used by the DataBase class to write data to file
+    /**
+     * Returns the writable form of the value.
+     * Used by the DataBase class to write data to file
      */
     public String toDataForm(){
         if(lines.isEmpty())
