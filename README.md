@@ -20,7 +20,7 @@ Let's first understand **how it works**,
 - What the files contain is just the data you defined
 - Follows a small, simple & easy structure to define data
 
-It is so simple that you can even modify the data easily with in a text editor.
+It is so simple that you can even modify the data easily within a text editor.
 
 
 ## How Data is DEFINED
