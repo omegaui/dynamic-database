@@ -117,8 +117,6 @@ package test;
 
 import omegaui.dynamic.database.DataBase;
 
-import java.io.File;
-
 public class Main {
     public static void main(String[] args) {
         DataBase dataBase = new DataBase(".some-data"); // Auto-Creates the file if it does n't already exists!
