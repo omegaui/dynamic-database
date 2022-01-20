@@ -1,0 +1,8 @@
+>JDK Path
+-/usr/lib/jvm/jdk-17
+>Main Class
+-test.Main
+>Language Tag
+-0
+>Project Classpath : Required Resource Roots
+-project-root$/res
