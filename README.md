@@ -11,6 +11,11 @@ Its just some java class reading and writing data to a file in a formatted manne
 
 So, All you need is either the source code or the tiny [precompiled-jar](https://raw.githubusercontent.com/omegaui/dynamic-database/master/bin/dynamic-database.jar)
 
+# Required Java Version
+If you want to use this library through the **jar** then you need to have at least **17** as the compilation level.
+
+Simply, you need java 17 if you want to use this library through the **jar**.
+
 ## How it works
 
 Let's first understand **how it works**,
