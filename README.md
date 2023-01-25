@@ -1,3 +1,5 @@
+# Deprecated Use [json-data-storage](https://github.com/omegaui/json-data-storage) instead
+
 # dynamic-database
 
 A fully code integrated minimal database management system for Java, Scala, Kotlin or Groovy projects.
